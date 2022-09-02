@@ -46,6 +46,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+1. Okay so I started this challenge before I was in the habit of taking notes and documenting my process, so I don't have any notes from the first stage of building it. Now it's some weeks later and I'm coming back to finish it. And from what I recall, most of it I built without difficulty but I remember where I got stuck--it was in creating the overlay for the image upon hover/active states.
+
 ### Built with
 
 - Semantic HTML5 markup

@@ -18,12 +18,13 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 #content-wrapper {
     background-color: hsl(216, 50%, 16%);
     width: 90%;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 20px 0;
 }
 
@@ -37,25 +38,7 @@ body {
     height: 100%;
     border-radius: 10px;
 }
-
-img.overlay {
-    position: absolute;
-    transition: all 0.4s ease;
-    opacity: 0;
-}
-
-#img a:hover .overlay {
-    opacity: 0.8;
-}
     
-.FadeEffect {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 100px;
-    background-color:hsl(178, 100%, 50%);
-    }
-
 #information {
     margin-left: 25px;
 }
@@ -85,9 +68,8 @@ img.overlay {
 #currency-timing-info {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 #currency {
@@ -99,18 +81,17 @@ img.overlay {
 }
 
 #clock-icon {
-    padding: 0 5px;
+    padding: 0 5px 0 90px;
 }
 
 #timing {
-    padding-right: 20px;
     font-weight: 300;
 }
 
 hr {
     border: 1px solid hsl(215, 32%, 27%);
     width: 88%;
-    margin: 20px auto;
+    margin: 15px auto;
 }
 
 #user {
@@ -121,12 +102,15 @@ hr {
     margin-bottom: 20px;
 }
 
+#user-img {
+    padding: 5px 15px 0 25px;
+}
+
 #user-img img {
     border-radius: 50%;
     border: 1px solid white;
-    height: 40px;
-    width: 40px;
-    margin: 0 15px 0 25px;
+    height: 30px;
+    width: 30px;
 }
 
 #user-name a {
