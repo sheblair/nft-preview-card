@@ -47,6 +47,10 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ## My process
 
 1. Okay so I started this challenge before I was in the habit of taking notes and documenting my process, so I don't have any notes from the first stage of building it. Now it's some weeks later and I'm coming back to finish it. And from what I recall, most of it I built without difficulty but I remember where I got stuck--it was in creating the overlay for the image upon hover/active states.
+2. Before I tackled the card overlay, I fixed some alignment issues with the icons in the pricing and timing information. I moved them into separate HTML elements, switched justify-content from space-between to flex-start, and added padding to space them out. I also tweaked padding in the profile icon for the creator.
+3. To figure out the card overlay, since I'd never done this before, I decided to take the code from another user's solution and then work backwards to figure out how it worked. I used @correlucas' solution. This worked well--it was pretty easy to see what he'd done and to figure out how it worked. I ran into a couple of weird issues though:
+  - First, the icon wasn't sizing correctly. I figured out this was because of how I'd written my HTML and how I was referencing elements in my CSS, so I fixed that and resized it correctly.
+  - Secondly, there was this tiny overhang, where the bottom of the overlay extended a handful of pixels or so past the bottom of the image. I tried so many different things to make the height of the image fill the size of the parent div, to remove the overhang. I tried to fix it by adjusting the height from 100% to 99%, which in DevTools only showed me that the correct height would lie somewhere in between 99 and 100% -- no good. I finally figured this out by going back to @correlucas' solution code: I needed to set the display property to block. Once I did that, the image and overlay aligned perfectly. Done (with mobile styles)!
 
 ### Built with
 
@@ -63,33 +67,39 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Why you should use classes vs. ids. I'm still learning this, but for a long time I couldn't figure out why people used classes more than ids, because I was thinking oh well ids must be better, because they are more specific and then you can just use CSS to tell each specific element on your page exactly what you want it to do. But the more I write code, the more I realize that often what is more useful is being able to layer effects on and off elements, and in order to do this you need to use classes.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+Here's the code for the card overlay, that I took from @correlucas. He had also added some transitions that were definitely nice but I removed them because I wanted to first just understand the bare bones of what he did:
 ```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+.card-overlay {
+    display: flex;
+    position: absolute;
+    border-radius: 10px;
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(178, 100%, 50%, 0.5);
+    opacity: 0;
+}
+
+.card-overlay:hover {
+    opacity: 1;
+  }
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- On using classes vs. ids
+- On display: block and display: inline and how they affect layouts
+- On hover effects and overlay
+- On accurate referencing of elements in CSS and how to make your life easier in this regard
+  - Actually, codepip games were useful for this and I learned a lot more about selector specificity and practiced a lot using them. I'll link below.
 
 ### Useful resources
 
