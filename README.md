@@ -101,7 +101,7 @@ I came back to take a look at this and see what could be improved - the setup wa
 
 ## Author
 
-- [Sheila Blair](https://www.frontendmentor.io/profile/sheblair)
+[Sheila Blair](https://www.frontendmentor.io/profile/sheblair)
 
 ## Acknowledgments
 
