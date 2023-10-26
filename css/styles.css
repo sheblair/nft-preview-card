@@ -90,12 +90,8 @@ main {
     font-size: 1.4rem;
 }
 
-.card__info-title a {
-    text-decoration: none;
-    color: var(--link-text);
-}
-
-.card__info-title a:hover {
+.card__info-title:hover {
+    cursor: pointer;
     color: var(--link-hover);
 }
 
@@ -156,17 +152,13 @@ hr {
     width: 30px;
 }
 
-.card__user-name a {
-    text-decoration: none;
-    color: var(--link-text);
-}
-
-.card__user-name a:hover {
-    color: var(--link-hover);
-}
-
 .card__user-name span {
     color: var(--link-text);
+}
+
+.card__user-name span:hover {
+    color: var(--link-hover);
+    cursor: pointer;
 }
 
 .attribution {
