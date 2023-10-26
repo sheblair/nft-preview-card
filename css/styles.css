@@ -8,121 +8,136 @@ html {
     font-size: 18px;
 }
 
+:root {
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --card-divider: hsl(215, 32%, 27%);
+    --base-text: hsl(215, 51%, 70%);
+    --link-text: hsl(0, 0%, 100%);
+    --link-hover: hsl(178, 100%, 50%);
+}
+
 body {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
-    background: hsl(217, 54%, 11%);
-    color: hsl(215, 51%, 70%);
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    background: var(--main-bg);
+    color: var(--base-text);
 }
 
-.content-wrapper {
-    background-color: #14253d;
-    width: 90%;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__container {
+    background-color: var(--card-bg);
     border-radius: 15px;
     margin: 20px 0;
+    width: 90%;
+    max-width: 400px;
 }
 
-.img-container {
+.card__img-container,
+.card__info-container {
+    width: 85%;
+}
+
+.card__img-container {
     margin: 25px auto;
     position: relative;
-    width: 85%;
     height: auto;
 }
 
-.card-img {
+.card__img img {
     width: 100%;
     border-radius: 10px;
     display: block;
 }
 
-.hover-icon {
+.card__img-overlay img {
     width: 45px;
     height: 45px;
 }
 
-.card-overlay {
+.card__img-overlay {
     display: flex;
-    position: absolute;
-    border-radius: 10px;
-
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-
+    position: absolute;
+    border-radius: 10px;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-color: hsl(178, 100%, 50%, 0.5);
     opacity: 0;
 }
 
-.card-overlay:hover {
+.card__img-overlay:hover {
     opacity: 1;
-  }
-    
-.information {
-    margin-left: 25px;
+    cursor: pointer;
 }
 
-.title {
-    color: white;
+.card__info-container {
+    margin: 0 auto;
+}
+
+.card__info-title {
+    color: var(--link-text);
     margin-bottom: 20px;
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: 1.4rem;
 }
 
-.title a {
+.card__info-title a {
     text-decoration: none;
-    color: white;
+    color: var(--link-text);
 }
 
-.title a:hover {
-    color:hsl(178, 100%, 50%);
+.card__info-title a:hover {
+    color: var(--link-hover);
 }
 
-.description {
-    line-height: 1.5em;
+.card__info-description {
+    line-height: 1.5rem;
     margin-bottom: 20px;
     font-weight: 300;
+    font-size: 1rem;
 }
 
-.currency-timing-info {
+.card__currency-container,
+.currency-container,
+.timing-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
     align-items: center;
 }
 
-.currency {
-    color: hsl(178, 100%, 50%);
+.card__currency-container {
+    justify-content: space-between;
 }
 
-.ethereum-icon {
-    padding: 0 5px 0 0;
+.currency-container p {
+    color: var(--link-hover);
 }
 
-.clock-icon {
-    padding: 0 5px 0 90px;
-}
-
-.timing {
+.timing-container p {
     font-weight: 300;
 }
 
+.currency-container img,
+.timing-container img {
+    margin-right: .5rem;
+}
+
 hr {
-    border: 1px solid hsl(215, 32%, 27%);
+    border: 1px solid var(--card-divider);
     width: 88%;
     margin: 15px auto;
 }
 
-.user {
+.card__user-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -130,37 +145,49 @@ hr {
     margin-bottom: 20px;
 }
 
-.user-img {
+.card__user-img {
     padding: 5px 15px 0 25px;
 }
 
-.user-img img {
+.card__user-img img {
     border-radius: 50%;
-    border: 1px solid white;
+    border: 1px solid var(--link-text);
     height: 30px;
     width: 30px;
 }
 
-.user-name a {
+.card__user-name a {
     text-decoration: none;
-    color: white;
+    color: var(--link-text);
 }
 
-.user-name a:hover {
-    color:hsl(178, 100%, 50%);
+.card__user-name a:hover {
+    color: var(--link-hover);
 }
 
-.user-name span {
-    color: white;
+.card__user-name span {
+    color: var(--link-text);
 }
 
 .attribution {
     margin: 10px 0;
 }
 
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--link-text);
+}
+
+.attribution a:hover {
+    color: var(--link-hover);
+}
+
 @media screen and (min-width: 1440px) {
-    .content-wrapper {
-        width: 25%;
-        filter: drop-shadow(0px 0px 10px #14253d);
+    .card__container {
+        margin: 100px 0;
     }
 }
